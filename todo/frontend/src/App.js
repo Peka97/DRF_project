@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'react';
+import axios from 'axios';
 
 // import logo from './logo.svg';
 import './App.css';
@@ -32,8 +32,14 @@ class App extends React.Component {
         //         'menu': menu,
         //     }
         // )
+        axios.get('http://127.0.0.1:8000/api/users', {
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                // "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+                // "Access-Control-Allow-Headers": "Content-Type"
+            },
 
-        axios.get('http://127.0.0.1:8000/api/users')
+        })
             .then(response => {
                 const users = response.data
                 this.setState(
