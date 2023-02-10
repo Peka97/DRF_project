@@ -1,18 +1,25 @@
 import React from "react";
 
 
-const FooterItem = ({ paragraph }) => {
-    return (<li>paragraph.Point1</li>)
+const FooterItem = ({ footer }) => {
+    return (
+        <tr>
+            <td>
+                {footer.for_users}
+            </td>
+            <td>
+                {footer.about}
+            </td>
+        </tr>
+    )
 }
 
 
-const FooterList = ({ footer }) => {
+const FooterList = ({ footers }) => {
     return (
-        <div>
-            <ul>
-                {footer.map((paragraph) => <FooterItem paragraph={paragraph} />)}
-            </ul>
-        </div>
+        <table>
+            {footers.map((footer) => <FooterItem footer={footer} />)}
+        </table>
     )
 }
 

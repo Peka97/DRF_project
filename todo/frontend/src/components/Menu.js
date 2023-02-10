@@ -2,17 +2,24 @@ import React from "react";
 
 
 const MenuItem = ({ paragraph }) => {
-    return (<li>paragraph.Point1</li>)
+    return (
+        <tr>
+            <td>
+                {paragraph.main}
+            </td>
+            <td>
+                {paragraph.contacts}
+            </td>
+        </tr>
+    )
 }
 
 
 const MenuList = ({ menu }) => {
     return (
-        <div>
-            <ul>
-                {menu.map((paragraph) => <MenuItem paragraph={paragraph} />)}
-            </ul>
-        </div>
+        <table>
+            {menu.map((paragraph) => <MenuItem paragraph={paragraph} />)}
+        </table>
     )
 }
 
