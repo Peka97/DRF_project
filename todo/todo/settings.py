@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     # Local
     'users.apps.UsersConfig',
+    'TODO.apps.TodoConfig',
 
 ]
 
