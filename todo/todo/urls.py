@@ -18,14 +18,14 @@ from django.urls import path, include
 
 from rest_framework.routers import DefaultRouter
 
-from users.views import UserModelViewSet
-from TODO.views import ProjectsModelViewSet, TODOModelViewSet
+from users.views import CustomUserLimitOffsetPaginatonViewSet
+from TODO.views import ProjectLimitOffsetPaginatonViewSet, TODOLimitOffsetPaginatonViewSet
 
 
 router = DefaultRouter()
-router.register('users', UserModelViewSet)
-router.register('projects', ProjectsModelViewSet)
-router.register('TODO', TODOModelViewSet)
+router.register('users', CustomUserLimitOffsetPaginatonViewSet)
+router.register('projects', ProjectLimitOffsetPaginatonViewSet)
+router.register('TODO', TODOLimitOffsetPaginatonViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

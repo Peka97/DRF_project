@@ -4,12 +4,8 @@ import React from "react";
 const MenuItem = ({ paragraph }) => {
     return (
         <tr>
-            <td>
-                {paragraph.main}
-            </td>
-            <td>
-                {paragraph.contacts}
-            </td>
+            <td>{paragraph.main}</td>
+            <td>{paragraph.contacts}</td>
         </tr>
     )
 }
