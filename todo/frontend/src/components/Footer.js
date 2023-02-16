@@ -4,12 +4,8 @@ import React from "react";
 const FooterItem = ({ footer }) => {
     return (
         <tr>
-            <td>
-                {footer.for_users}
-            </td>
-            <td>
-                {footer.about}
-            </td>
+            <td>{footer.for_users}</td>
+            <td>{footer.about}</td>
         </tr>
     )
 }
