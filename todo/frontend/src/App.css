@@ -1,5 +1,9 @@
-.App {
-  text-align: center;
+.MenuNav {
+  font-family: 'Lora', serif;
+  display: inline-block;
+  list-style: none;
+  background-color: antiquewhite;
+  padding-left: 0;
 }
 
 .App-logo {
