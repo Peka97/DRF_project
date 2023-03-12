@@ -52,5 +52,4 @@ class TestCustomUserLimitOffsetPaginatonViewSet(APITestCase):
         user = mixer.blend(CustomUser)
         self.client.login(username='admin', password='admin123456')
         response = self.client.get(f'/api/users/{user.id}/')
-        print(response)
         self.assertEqual(response.status_code, status.HTTP_200_OK)

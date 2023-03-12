@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-oee7f5*!ztvn1mzyp&izyv^4yk8o9j8%1m=dt1lmympd(uy#&b
 DEBUG = True
 
 
-ALLOWED_HOSTS=['*']
+ALLOWED_HOSTS = ['*']
 
 CORS_ALLORED_ORIGINS = [
     'http://127.0.0.1:3000',
@@ -37,8 +37,8 @@ CORS_ALLORED_ORIGINS = [
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
-       'http://127.0.0.1',
-       'http://localhost',
+    'http://127.0.0.1',
+    'http://localhost',
 )
 
 
@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'rest_framework.authtoken',
+    'drf_yasg',
 
     # Local
     'users.apps.UsersConfig',
@@ -82,16 +83,17 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
-        ],
+    ],
     'DEFAULT_FILTER_BACKENDS': [
         'django_filters.rest_framework.DjangoFilterBackend',
-        ],
+    ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
-        ],
+    ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 100,
+    'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.URLPathVersioning',
 }
 
 ROOT_URLCONF = 'todo.urls'
