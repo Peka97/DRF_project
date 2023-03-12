@@ -3,23 +3,19 @@ import React from "react";
 
 const FooterItem = ({ footer }) => {
     return (
-        <tr>
-            <td>
-                {footer.for_users}
-            </td>
-            <td>
-                {footer.about}
-            </td>
-        </tr>
+        <ul>
+            <li>{footer.for_users}</li>
+            <li>{footer.about}</li>
+        </ul>
     )
 }
 
 
 const FooterList = ({ footers }) => {
     return (
-        <table>
+        <div>
             {footers.map((footer) => <FooterItem footer={footer} />)}
-        </table>
+        </div>
     )
 }
 

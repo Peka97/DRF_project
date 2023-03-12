@@ -3,23 +3,19 @@ import React from "react";
 
 const MenuItem = ({ paragraph }) => {
     return (
-        <tr>
-            <td>
-                {paragraph.main}
-            </td>
-            <td>
-                {paragraph.contacts}
-            </td>
-        </tr>
+        <ul className='MenuNav'>
+            <li>{paragraph.main}</li>
+            <li>{paragraph.contacts}</li>
+        </ul>
     )
 }
 
 
 const MenuList = ({ menu }) => {
     return (
-        <table>
+        <div>
             {menu.map((paragraph) => <MenuItem paragraph={paragraph} />)}
-        </table>
+        </div>
     )
 }
 
