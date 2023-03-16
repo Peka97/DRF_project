@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const ToDoItem = ({ todo }) => {
+const ToDoItem = ({ todo, deleteTODO }) => {
     let is_active = undefined
     if (todo.is_active) {
         is_active = '+'
@@ -18,11 +18,15 @@ const ToDoItem = ({ todo }) => {
             <td>{is_active}</td>
             <td>{project_id}</td>
             <td>{user_id}</td>
+            <td>
+                <a href="http://localhost:3000/TODO/create"><button>Create</button></a>
+                <button type='button' onClick={() => deleteTODO(todo.id)}>Delete</button>
+            </td>
         </tr>
     )
 }
 
-const ToDoList = ({ todos }) => {
+const ToDoList = ({ todos, deleteTODO }) => {
     return (
         <table>
             <th>Text</th>
@@ -30,7 +34,7 @@ const ToDoList = ({ todos }) => {
             <th>Is Active</th>
             <th>Project ID</th>
             <th>User ID</th>
-            {todos.map((todo) => <ToDoItem todo={todo} />)}
+            {todos.map((todo) => <ToDoItem todo={todo} deleteTODO={deleteTODO} />)}
         </table>
     )
 }
